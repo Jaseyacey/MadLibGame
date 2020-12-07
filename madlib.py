@@ -1,7 +1,13 @@
-noun = input("Enter an animal : ")
-noun2 = input("Enter another animal : ")
-noun3 = input("Enter a vehicle : ")
-noun4 = input("Enter a colour: ")
+import random
 
-print("The " + noun + " and the " + noun2 + " went to the sea in a " +
-      noun4 + " coloured " + noun3 + " on Tuesday")
+f = open('madlibs.txt', 'r')
+
+madlibs = f.readlines()
+
+madlib = random.choice(madlibs)
+
+noun = input("Enter a noun: ")
+
+madlib = madlib.replace("blank", noun)
+
+print(madlib)
